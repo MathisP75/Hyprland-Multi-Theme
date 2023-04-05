@@ -1,0 +1,54 @@
+@import ".config/wofi/colors/nord.css";
+
+* {
+    font-family: SFPro;
+    font-size: 17px;
+    border-radius: 10px;
+    border: none;
+}
+
+window {
+    margin: 5px;
+    background-color: @nord2;
+    border-radius: 0px;
+}
+
+#outer-box {
+    margin: 4px;
+    border-radius: 0px;
+}
+
+#input {
+    margin: 10px 10px 20px 10px;
+    background-color: @nord0;
+    color: @nord4;
+    border-radius: 8px;
+    padding: 5px;
+    border: none;
+}
+
+#inner-box {
+    margin: 0px 10px 50px 10px;
+    border-radius: 0px;
+    background-color: rgba(59, 66, 82, 0.0);
+}
+
+#scroll {
+    margin: 0px 0px;
+    border-radius: 3px;
+    border: none;
+}
+
+#text {
+    margin: 2px;
+}
+
+#entry {
+    border: none;
+    border-radius: 8px;
+}
+
+#entry:selected {
+    color: @nord1;
+    background-color: @nord7;
+}

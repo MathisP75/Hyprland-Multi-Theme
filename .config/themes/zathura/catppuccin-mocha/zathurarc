@@ -1,0 +1,3 @@
+include catppuccin-mocha
+set selection-clipboard clipboard
+set recolor true

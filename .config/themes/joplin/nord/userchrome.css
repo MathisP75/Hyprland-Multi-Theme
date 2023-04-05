@@ -1,0 +1,146 @@
+/*******************************************************************************
+ * Nord2 - A sub-theme of Joplin's Built-in Nord theme.
+ *
+ * Latest Version: https://github.com/mattsbennett/joplin-Nord2
+ * Designed by: Matthew Bennett
+ * Goals: Readability, even, mid-contrast, minimalism.
+ *
+ * userchrome.css: Custom stylesheet for Joplin-wide app styles.
+ ******************************************************************************/
+
+/* Variables ---------------------------------------------------------------- */
+:root {
+    /* Nord2 values */
+    --lighter-grey: hsla(0, 0%, 95%, 1);
+    --light-grey: hsla(0, 0%, 85%, 1);
+    --mid-grey: hsla(0, 0%, 70%, 1);
+    --font-sans: "SF Pro Text", "Roboto", sans-serif;
+    --font-mono: "Fira Code", monospace;
+
+    /* Nord values */
+    --nord-highlight: #00AEEF;
+    --nord-sidebar-selection: rgb(94, 129, 172);
+    --nord-sidebar: rgb(67, 76, 94);
+    --nord-note-list: rgb(46, 52, 64);
+    --nord-note-list-selected: rgb(129, 161, 193);
+
+    /* Nord derivative values */
+    --nord-sidebar-selection-dark: hsla(213, 32%, 32%, 1);
+    --nord-highlight-light: hsla(196, 100%, 67%, 1);
+    --nord-sidebar-light: hsla(220, 17%, 40%, 1);
+    --nord-note-list-background-light: hsla(220, 16%, 25%, 1);
+}
+
+/* Base Elements ------------------------------------------------------------ */
+body,
+a,
+span:not(::before) {
+    font-family: var(--font-sans) !important;
+}
+
+button {
+    font-size: 13px;
+}
+
+input {
+    border: 1px solid var(--nord-sidebar-light) !important;
+}
+
+/* Disable common input styles for hidden react-select input */
+input[aria-autocomplete="list"] {
+    border: 0 !important;
+}
+
+input[aria-autocomplete="list"]:focus {
+    outline: 0 !important;
+}
+
+
+button:focus,
+input:focus,
+select:focus {
+    outline: var(--nord-note-list-selected) auto 2px !important;
+}
+
+/* Sidebars ----------------------------------------------------------------- */
+div {
+    color: var(--light-grey) !important;
+}
+
+.side-bar,
+.side-bar div,
+.side-bar div a {
+    color: var(--lighter-grey) !important;
+}
+
+.note-list .list-item-container::before {
+    border-bottom: 1px solid var(--nord-note-list-background-light) !important;
+}
+
+.note-list .list-item-container {
+    height: 48px !important;
+}
+
+.synchronize-button {
+    border: 0 !important;
+    margin: 10px 5px !important;
+}
+
+/* Main Header -------------------------------------------------------------- */
+.header a,
+.header .button,
+.header .button .fa,
+.note-list .list-item-container a {
+    color: var(--light-grey) !important;
+}
+
+/* Note Header -------------------------------------------------------------- */
+.editor-toolbar {
+    border-bottom: 0 !important;
+}
+
+.editor-toolbar,
+.tag-list {
+    margin-bottom: 0 !important;
+}
+
+.tag-list {
+    border-bottom: 1px solid var(--nord-sidebar) !important;
+}
+
+.tag-list span {
+    background-color: var(--nord-sidebar-selection) !important;
+    border-radius: 2px !important;
+    color: var(--lighter-grey) !important;
+}
+
+/* Markdown ----------------------------------------------------------------- */
+.ace_editor {
+    margin-top: 5px !important;
+}
+
+.ace_editor div,
+.ace_editor span {
+    font-family: var(--font-mono) !important;
+}
+
+.ace-chaos .ace_marker-layer .ace_selection {
+    background: var(--nord-sidebar-selection-dark) !important;
+}
+
+.ace-chaos .ace_support.ace_function {
+    color: var(--nord-highlight-light) !important;
+}
+
+.ace-chaos .ace_comment {
+    color: var(--mid-grey) !important;
+}
+
+/* Plugins ------------------------------------------------------------------ */
+
+/*
+ * Uncomment if you use tabs plugin horizontally
+ * #plugin-view-joplin\.plugin\.note\.tabs-note\.tabs\.panel {
+ *    border-bottom: 0 !important;
+ * }
+ */
