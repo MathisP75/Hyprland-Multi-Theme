@@ -1352,8 +1352,7 @@ splitbutton > separator {
 }
 
 splitbutton > menubutton > button {
-  padding-left: 4px;
-  padding-right: 4px;
+  padding: 6px 10px;
 }
 
 splitbutton.image-button > button {
@@ -2151,9 +2150,11 @@ headerbar.selection-mode .selection-menu .arrow {
 }
 
 headerbar.default-decoration {
-  min-height: 24px;
-  padding: 6px;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
+  min-height: 36px;
+  padding: 0;
+  box-shadow: none;
+  border: none;
+  outline: none;
 }
 
 headerbar.default-decoration windowcontrols button,
@@ -5274,6 +5275,11 @@ window.csd.maximized, window.csd.fullscreen, window.csd.tiled, window.csd.tiled-
   transition: none;
 }
 
+window.csd.maximized, window.csd.fullscreen {
+  box-shadow: none;
+  outline: none;
+}
+
 window.solid-csd {
   margin: 0;
   padding: 2px;
@@ -5284,10 +5290,6 @@ window.solid-csd {
 
 window.solid-csd:backdrop {
   background-color: #1e1e2e;
-}
-
-window.ssd {
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12);
 }
 
 windowcontrols button:not(.suggested-action):not(.destructive-action) {
@@ -6944,6 +6946,15 @@ panelstatusbar > paneltogglebutton button {
 
 .style-variant button.toggle:checked > stylevariantpreview > .wallpaper {
   outline-color: #b4befe;
+}
+
+playlistview scrollbar.overlay-indicator.dragging, playlistview scrollbar.overlay-indicator.hovering {
+  background-color: transparent;
+}
+
+playlistview queuerow picture.cover,
+playlistview queuerow image.card {
+  border: none;
 }
 
 window.dialog > .dialog-vbox > box > scrolledwindow > viewport > widget > list.boxed-list {

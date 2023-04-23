@@ -1,8 +1,10 @@
 /* Polar Night */
 @define-color nord0 #2e3440;
 @define-color nord1 #3b4252;
-@define-color nord2 rgba(59, 66, 82, 0.8);
+@define-color nord2 #434c5e;
+@define-color nord2-transparent rgba(59, 66, 82, 0.9);
 @define-color nord3 #4c566a;
+@define-color nord3-transparent rgba(76, 86, 106, 0.9);
 
 /* Snow Storm */
 @define-color nord4 #d8dee9;

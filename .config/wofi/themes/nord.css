@@ -1,29 +1,37 @@
 @import ".config/wofi/colors/nord.css";
 
 * {
-    font-family: SFPro;
+    font-family: JetBrainsMono Nerd Font, FontAwesome;
     font-size: 17px;
-    border-radius: 10px;
+    border-radius: 15px;
     border: none;
 }
 
 window {
-    margin: 5px;
-    background-color: @nord2;
+    margin: 0px;
+    background-color: @nord3-transparent;
     border-radius: 0px;
+    /*
+    border-right-width: 3px;
+    border-right-color: @nord3;
+    border-right-style: solid;
+
+    border-left-width: 3px;
+    border-left-color: @nord3;
+    border-left-style: solid;*/
 }
 
 #outer-box {
-    margin: 4px;
+    margin: 0px;
     border-radius: 0px;
 }
 
 #input {
     margin: 10px 10px 20px 10px;
+    font-size: 19px;
     background-color: @nord0;
     color: @nord4;
-    border-radius: 8px;
-    padding: 5px;
+    padding: 15px;
     border: none;
 }
 
@@ -45,7 +53,8 @@ window {
 
 #entry {
     border: none;
-    border-radius: 8px;
+    padding: 5px;
+    margin: 0px;
 }
 
 #entry:selected {
