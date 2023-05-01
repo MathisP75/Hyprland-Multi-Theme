@@ -1,0 +1,262 @@
+@import "../colors/gruvbox.css";
+
+/* margin: top right bottom left */
+/* Spacing outside the element */
+
+/* padding: top right bottom left */
+/* Spacing inside the element */
+
+* {
+  font-family: Berkeley Mono, FontAwesome;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+window#waybar {
+  background-color: @bg;
+  color: @bg;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  border-radius: 0px;
+  transition-duration: .5s;
+  margin: 0px 30px 0px 30px;
+
+  border-bottom-width: 2px;
+  border-bottom-color: @fg;
+  border-bottom-style: solid;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+tooltip {
+  background: @fg4;
+}
+
+tooltip label {
+  color: @bg;
+}
+
+#workspaces {
+  border-radius: 0px;
+  transition: none;
+  background: @fg4;
+  margin: 7px 0px 7px 5px;
+}
+
+#workspaces button{
+  color: @bg;
+  background: @fg4;
+  border-radius: 0px;
+  padding: 10px 15px 10px 15px;
+  margin: 0px 0px 0px 0px;
+}
+
+#workspaces button:hover {
+  background: @aqua;
+  color: @bg;
+}
+
+#workspaces button.active {
+  color: @bg;
+  background: @blue;
+  padding: 10px 15px 10px 15px;
+}
+
+#custom-launcher,
+#clock,
+#battery,
+#cpu,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#memory,
+#custom-dunst,
+#custom-powermenu {
+  padding: 0px 20px 0px 20px;
+  margin:7px 0px 7px 0px;
+  color: @blue;
+  background-color: @fg4;
+}
+
+/* ========= APP LAUNCHER ========= */
+
+#custom-launcher {
+  font-size: 21px;
+  color: @bg;
+  background-color: @fg4;
+  padding: 0px 23px 0px 20px;
+  margin: 7px 5px 7px 7px;
+}
+
+/* ========= CLOCK ========= */
+
+#clock.icon {
+  font-size: 19px;
+  color: @bg;
+  background-color: @red;
+  margin: 7px 0px 7px 5px;
+  padding: 0px 20px 0px 17px;
+}
+
+#clock.time {
+  color: @bg;
+  background-color: @fg4;
+  margin: 7px 5px 7px 0px;
+  padding: 0px 11px 0px 10px;
+}
+
+/* ========= DATE ========= */
+
+#clock.dateicon {
+  font-size: 19px;
+  color: @bg;
+  background-color: @green;
+  margin: 7px 0px 7px 5px;
+  padding: 0px 23px 0px 17px;
+}
+
+#clock.date {
+  color: @bg;
+  background-color: @fg4;
+  margin: 7px 5px 7px 0px;
+  padding: 0px 11px 0px 10px;
+}
+
+/* ========= NOTIFICATIONS ========= */
+
+#custom-dunst {
+  font-size: 17px;
+  padding: 0px 24px 0px 19px;
+  margin: 7px 26px 7px 5px;
+  background-color: @fg4;
+}
+
+/* ========= VOLUME ========= */
+
+#pulseaudio.icon {
+  font-size: 19px;
+  color: @bg;
+  background-color: @yellow;
+  margin: 7px 0px 7px 5px;
+  padding: 0px 20px 0px 17px;
+}
+
+#pulseaudio.sound {
+  color: @bg;
+  background-color: @fg4;
+  margin: 7px 5px 7px 0px;
+  padding: 0px 11px 0px 10px;
+}
+
+/* ========= NETWORK ========= */
+
+#network.icon {
+  font-size: 19px;
+  color: @bg;
+  background-color: @purple;
+  margin: 7px 0px 7px 5px;
+  padding: 0px 25px 0px 17px;
+}
+
+#network.strenght {
+  color: @bg;
+  background-color: @fg4;
+  margin: 7px 5px 7px 0px;
+  padding: 0px 11px 0px 10px;
+}
+
+/* ========= BATTERY ========= */
+
+#battery.icon {
+  color: @bg;
+  background-color: @aqua;
+  margin: 7px 0px 7px 5px;
+  padding: 0px 25px 0px 17px;
+}
+
+#battery.value {
+  color: @bg;
+  background-color: @fg4;
+  margin: 7px 5px 7px 0px;
+  padding: 0px 11px 0px 10px;
+}
+
+/* ========= WINDOW ========= */
+
+#window.icon {
+  color: @blue;
+  background-color: @fg4;
+  margin: 7px 0px 7px 10px;
+  padding: 0px 17px 0px 17px;
+}
+
+#window.title {
+  color: @bg;
+  background-color: @fg4;
+  margin: 7px 5px 7px 0px;
+  padding: 0px 11px 0px 10px;
+}
+
+/* ========= CPU ========= */
+
+#cpu.icon {
+  color: @blue;
+  background-color: @fg4;
+  margin: 7px 0px 7px 10px;
+  padding: 0px 17px 0px 17px;
+}
+
+#cpu.usage {
+  color: @bg;
+  background-color: @fg4;
+  margin: 7px 5px 7px 0px;
+  padding: 0px 11px 0px 10px;
+}
+
+/* ========= TEMPERATURE ========= */
+
+#temperature.icon {
+  font-size: 19px;
+  color: @blue;
+  background-color: @fg4;
+  margin: 7px 0px 7px 10px;
+  padding: 0px 17px 0px 17px;
+}
+
+#temperature.value {
+  color: @bg;
+  background-color: @fg4;
+  margin: 7px 5px 7px 0px;
+  padding: 0px 11px 0px 10px;
+}
+
+#custom-powermenu {
+  color: @bg;
+  background-color: @fg4;
+  font-size: 19px;
+  padding: 0px 23px 0px 22px;
+  margin: 7px 7px 7px 5px;
+}
+
+@keyframes blink {
+  to {
+    background-color: rgba(30, 34, 42, 0.5);
+    color: #abb2bf;
+  }
+}
+
+#battery.critical:not(.charging) {
+  color: #f53c3c;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+label:focus {
+  background-color: #000000;
+}

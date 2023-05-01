@@ -1,0 +1,12 @@
+{
+    "gtkTheme": "Solarized-Dark-Orange",
+    "kvantumTheme": "",
+    "iconTheme": "Solarized-Deluxe-Iconpack",
+    "colorScheme": "solarized",
+    "vsCodeTheme": "Solarized Dark",
+    "vsCodeExtraColors" : "",
+    "nvimTheme": "solarized_dark",
+    "obsidianTheme": "Solarized",
+    "font": "SF Mono",
+    "darkReaderColors": {"background": "#002b36", "text": "#93a1a1"}
+}

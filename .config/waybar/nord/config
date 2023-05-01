@@ -1,0 +1,169 @@
+{
+  "width": 70, 
+  "layer": "top",
+  "output": "DP-2",
+  "position": "left",
+  "spacing": 0,
+  "modules-left": ["custom/powermenu", "wlr/workspaces"],
+  "modules-center": ["clock#hours", "clock#minutes"],
+  "modules-right": ["pulseaudio#icon", "pulseaudio#sound", "network#icon", "network#strenght", "battery#icon", "battery#value"],
+
+  "wlr/workspaces": {
+    "format": "{icon}",
+    "disable-scroll": true,
+    "all-outputs": true,
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace e-1",
+    "on-scroll-down": "hyprctl dispatch workspace e+1",
+    "format-icons": {
+      "urgent": "",
+      "active": "",
+      "default": ""
+    },
+    "sort-by-number": true
+  },
+
+  "hyprland/window": {
+    "format": "   {}",
+    "separate-outputs": false
+  },
+  
+  "custom/launcher": {
+      "interval": "once",
+      "format": "󰣇",
+      "on-click": "wofi --show drun --term=kitty --width=40% --normal-window --columns 1 -I -s ~/.config/wofi/themes/style-witcher.css",
+      "tooltip": false
+    },
+
+    "backlight": {
+      "device": "nvidia_0",
+      "max-length": "4",
+      "format": "{icon}",
+      "tooltip-format": "{percent}%",
+      "format-icons": ["","","","", "", "", ""],
+      "on-click": "",
+      "on-scroll-up": "brightnessctl set 10%-",
+      "on-scroll-down": "brightnessctl set +10%"
+  },
+
+  "cpu": {
+    "interval": 10,
+    "format": "  {usage}%",
+    "max-length": 10
+  },
+
+  "temperature": {
+      "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
+      "format": " {temperatureC}°C",
+    "on-click": "psensor"
+  },
+
+  "memory": {
+    "interval": 30,
+    "format": "  {}%",
+    "format-alt":" {used:0.1f}G",
+    "max-length": 10
+},
+
+  "custom/dunst": {
+      "exec": "~/.config/waybar/scripts/dunst.sh",
+      "on-click": "dunstctl set-paused toggle",
+      "restart-interval": 1,
+      "tooltip": false
+  },
+
+  "pulseaudio#icon": {
+      "format": "{icon}",
+      "format-bluetooth": "{icon}",
+      "format-bluetooth-muted": "󰸈",
+      "format-muted": "󰸈",
+      "format-icons": {
+          "default": ["󰕿", "󰖀", "󰕾"]
+      },
+      "on-click-right": "pavucontrol",
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+  },
+
+  "pulseaudio#sound": {
+    "format": "{volume}",
+    "format-bluetooth": "{volume}",
+    "format-bluetooth-muted": "{volume}",
+    "format-muted": "-",
+    "on-click-right": "pavucontrol",
+  "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+},
+
+"network#icon": {
+      "format-wifi": "{icon}",
+      "format-ethernet": " wired",
+      "format-disconnected": "󰤭",
+      "on-click": "sh ~/.config/wofi/scripts/wifimenu.sh 'nord' '--xoffset 0 --width=10% --height=100%'",
+      "tooltip-format": "{essid}",
+      "format-icons": ["󰤟", "󰤢", "󰤥", "󰤨"]
+},
+
+"network#strenght": {
+    "format-wifi": "{signalStrength}",
+    "format-ethernet": "{signalStrength}",
+    "format-disconnected": "-",
+    "on-click": "sh ~/.config/wofi/scripts/wifimenu-side.sh",
+    "tooltip-format": "{essid}"
+},
+
+"battery#icon": {
+    "bat": "BAT0",
+    "adapter": "ADP0",
+    "interval": 60,
+    "states": {
+        "warning": 30,
+        "critical": 15
+    },
+    "max-length": 10,
+    "format": "{icon}",
+    "format-warning": "{icon}",
+    "format-critical": "{icon}",
+    "format-charging": "",
+    "format-plugged": "",
+    "format-alt": "{icon}",
+    "format-full": "",
+    "format-icons": ["", "", "", "", "", "", "", "", "", ""]
+},
+
+"battery#value": {
+    "bat": "BAT0",
+    "adapter": "ADP0",
+    "interval": 60,
+    "states": {
+        "warning": 30,
+        "critical": 15
+    },
+    "max-length": 10,
+    "format": "{capacity}",
+    "format-warning": "{capacity}",
+    "format-critical": "{capacity}",
+    "format-charging": "{capacity}",
+    "format-plugged": "{capacity}",
+    "format-alt": "{time}",
+    "format-full": "100"
+},
+
+"clock#icon": {
+    "format": ""
+},
+
+"clock#hours": {
+  "format": "{:%H}",
+  "tooltip-format":  "{:%A, %B %d, %Y}"
+},
+
+"clock#minutes": {
+  "format": "{:%M}",
+  "tooltip-format":  "{:%A, %B %d, %Y}"
+},
+
+  "custom/powermenu": {
+      "format": "",
+      "on-click": "pkill wofi || sh .config/wofi/scripts/powermenu.sh 'nord' '--xoffset 0 --width=10% --height=100% -o $MAIN_DISPLAY'",
+      "tooltip": false
+  }
+}

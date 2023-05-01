@@ -1,0 +1,12 @@
+{
+    "gtkTheme": "Catppuccin-Mocha-Standard-Lavender-Dark",
+    "kvantumTheme": "Catppuccin-Mocha-Lavender",
+    "iconTheme": "Papirus-Dark",
+    "colorScheme": "mocha",
+    "vsCodeTheme": "Catppuccin Mocha",
+    "vsCodeExtraColors" : "",
+    "nvimTheme": "catppuccin",
+    "obsidianTheme": "Catppuccin",
+    "font": "SF Mono",
+    "darkReaderColors": {"background": "#1e1e2e", "text": "#cdd6f4"}
+}

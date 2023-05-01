@@ -1,0 +1,12 @@
+{
+    "gtkTheme": "Nordic-transparent",
+    "kvantumTheme": "Nordic-Solid",
+    "iconTheme": "Nordic",
+    "colorScheme": "nord",
+    "vsCodeTheme": "Nord",
+    "vsCodeExtraColors" : "\"window.background\":\"#2e3440e5\",\"editor.background\":\"#2e344000\",\"editorGutter.background\":\"#2e344000\"",
+    "nvimTheme": "nord",
+    "obsidianTheme": "Obsidian Nord",
+    "font": "JetBrainsMono Nerd Font",
+    "darkReaderColors": {"background": "#2e3440", "text": "#eceff4"}
+}

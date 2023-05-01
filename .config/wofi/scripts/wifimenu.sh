@@ -50,7 +50,7 @@ elif [[ "$CONSTATE" =~ "disabled" ]]; then
 fi
 
 
-CHENTRY=$(echo -e "$TOGGLE\nmanual\n$LIST" | uniq -u | wofi -i -d --style ~/.config/wofi/themes/"$COLOR_SCHEME".css --prompt "Wi-Fi SSID: " --lines "8" --width $RWIDTH)
+CHENTRY=$(echo -e "$TOGGLE\nmanual\n$LIST" | uniq -u | wofi $2 -i -d --style ~/.config/wofi/themes/"$1".css --prompt "Wi-Fi SSID: ")
 #echo "$CHENTRY"
 CHSSID=$(echo "$CHENTRY" | sed  's/\s\{2,\}/\|/g' | awk -F "|" '{print $1}')
 #echo "$CHSSID"
@@ -58,7 +58,7 @@ CHSSID=$(echo "$CHENTRY" | sed  's/\s\{2,\}/\|/g' | awk -F "|" '{print $1}')
 # If the user inputs "manual" as their SSID in the start window, it will bring them to this screen
 if [ "$CHENTRY" = "manual" ] ; then
 	# Manual entry of the SSID and password (if appplicable)
-	MSSID=$(echo "enter the SSID of the network (SSID,password)" | wofi -d --style ~/.config/wofi/themes/"$COLOR_SCHEME".css "Manual Entry: " --lines 1)
+	MSSID=$(echo "enter the SSID of the network (SSID,password)" | wofi $2 -d --style ~/.config/wofi/themes/"$1".css "Manual Entry: ")
 	# Separating the password from the entered string
 	MPASS=$(echo "$MSSID" | awk -F "," '{print $2}')
 
@@ -90,7 +90,7 @@ else
 		nmcli con up "$CHSSID"
 	else
 		if [[ "$CHENTRY" =~ "WPA2" ]] || [[ "$CHENTRY" =~ "WEP" ]]; then
-			WIFIPASS=$(echo "if connection is stored, hit enter" | wofi -P -d --style ~/.config/wofi/themes/"$COLOR_SCHEME".css --prompt "password" --lines 1 --width $RWIDTH)
+			WIFIPASS=$(echo "if connection is stored, hit enter" | wofi $2 -P -d --style ~/.config/wofi/themes/"$1".css --prompt "password")
 		fi
 		nmcli dev wifi con "$CHSSID" password "$WIFIPASS"
 	fi
