@@ -48,6 +48,10 @@ The themes for different programs are set in different ways, which might make th
 * "font" defines the system font for GTK apps, QT apps and VS Code
 * "darkReaderColors" defines the colors Dark Reader will use to recolor web pages
 
+## Theme switching:
+
+Switching is handled by a Wofi menu that changes the sourced theme-specific Hyprland config with a `sed` command. It can be found in `.config/wofi/scripts/theme-switcher.sh`.
+
 ## Supported apps, programs and settings:
 
 * Hyprland
