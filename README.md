@@ -7,7 +7,7 @@ The theme that is being used is defined in the main `hyprland.conf` file by sour
 
 Then, that theme-specific Hyprland config defines everything related to that theme for Hyprland. This includes statup apps, Hyprland plugins, decorations, animations, window and layer rules, binds and more. Most importantly, that file contains a startup script that will apply the theme to the rest of the system. That script is `switch-theme.sh` and it is located inside `.config/hypr/scripts`. It takes the theme name as an argument and then parses the corresponding JSON file to apply the themes to the different apps.
 
-**The themes for different programs are set in different ways, which might make this very confusing, but I will try my best to explain how it all works. **
+**The themes for different programs are set in different ways, which might make this very confusing, but I will try my best to explain how it all works.**
 
 * Some themes are set directly in the theme-specific Hyprland config, such as startup apps like a notification daemon or apps that are launched through keybinds, like Wofi.
 * Other themes can be changed by copying files in the right place. For example, Webcord uses any theme found inside `.config/WebCord/Themes`. All of the themes for these apps are stored in `.config/themes/<app-name>`.
