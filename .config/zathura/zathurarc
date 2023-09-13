@@ -1,3 +1,5 @@
-include nord
+include catppuccin-mocha
 set selection-clipboard clipboard
 set recolor true
+set window-title-basename true
+set statusbar-home-tilde true

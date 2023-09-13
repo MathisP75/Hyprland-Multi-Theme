@@ -1,14 +1,14 @@
 {
   "width": 70, 
   "layer": "top",
-  "output": "DP-2",
+  "output": "eDP-1",
   "position": "left",
   "spacing": 0,
-  "modules-left": ["custom/powermenu", "wlr/workspaces"],
+  "modules-left": ["custom/powermenu", "hyprland/workspaces"],
   "modules-center": ["clock#hours", "clock#minutes"],
   "modules-right": ["pulseaudio#icon", "pulseaudio#sound", "network#icon", "network#strenght", "battery#icon", "battery#value"],
 
-  "wlr/workspaces": {
+  "hyprland/workspaces": {
     "format": "{icon}",
     "disable-scroll": true,
     "all-outputs": true,
@@ -97,7 +97,7 @@
       "format-wifi": "{icon}",
       "format-ethernet": " wired",
       "format-disconnected": "󰤭",
-      "on-click": "sh ~/.config/wofi/scripts/wifimenu.sh 'nord' '--xoffset 0 --width=10% --height=100%'",
+      "on-click": "sh ~/.config/wofi/scripts/wifimenu.sh 'nord' '--xoffset 0 --width=30% --height=100%'",
       "tooltip-format": "{essid}",
       "format-icons": ["󰤟", "󰤢", "󰤥", "󰤨"]
 },
@@ -106,7 +106,7 @@
     "format-wifi": "{signalStrength}",
     "format-ethernet": "{signalStrength}",
     "format-disconnected": "-",
-    "on-click": "sh ~/.config/wofi/scripts/wifimenu-side.sh",
+    "on-click": "sh ~/.config/wofi/scripts/wifimenu.sh 'nord' '--xoffset 0 --width=30% --height=100%'",
     "tooltip-format": "{essid}"
 },
 
@@ -123,7 +123,7 @@
     "format-warning": "{icon}",
     "format-critical": "{icon}",
     "format-charging": "",
-    "format-plugged": "",
+    "format-plugged": "",
     "format-alt": "{icon}",
     "format-full": "",
     "format-icons": ["", "", "", "", "", "", "", "", "", ""]
@@ -144,7 +144,8 @@
     "format-charging": "{capacity}",
     "format-plugged": "{capacity}",
     "format-alt": "{time}",
-    "format-full": "100"
+    "format-full": "100",
+    "full-at": "95"
 },
 
 "clock#icon": {

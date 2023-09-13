@@ -6,13 +6,13 @@
   "height": 60, 
   "layer": "top",
   "position": "top",
-  "output": "DP-2",
+  "output": "eDP-1",
   "spacing": 0,
   "modules-left": ["custom/launcher", "clock#icon", "clock#time","clock#dateicon", "clock#date"],
-  "modules-center": ["wlr/workspaces"],
+  "modules-center": ["hyprland/workspaces"],
   "modules-right": ["pulseaudio#icon", "pulseaudio#sound", "network#icon", "network#strenght", "battery#icon", "battery#value", "custom/powermenu"],
 
-  "wlr/workspaces": {
+  "hyprland/workspaces": {
       "disable-scroll": true,
       "all-outputs": true,
       "on-click": "activate",

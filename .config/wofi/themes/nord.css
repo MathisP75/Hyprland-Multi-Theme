@@ -48,12 +48,13 @@ window {
 }
 
 #text {
-    margin: 2px;
+    margin: 10px;
 }
 
 #entry {
     border: none;
     padding: 5px;
+  padding-left: 10px;
     margin: 0px;
 }
 

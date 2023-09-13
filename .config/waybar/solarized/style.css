@@ -7,7 +7,7 @@
 /* Spacing inside the element */
 
 * {
-  font-family: JetBrainsMono Nerd Font, FontAwesome;
+  font-family: Iosevka Fixed, FontAwesome;
   font-size: 14px;
   font-weight: bold;
 }
@@ -17,19 +17,19 @@ window#waybar {
   color: @base3;
   transition-property: background-color;
   transition-duration: 0.5s;
-  border-radius: 0px 0px 15px 15px;
+  border-radius: 0px 0px 9px 9px;
   transition-duration: .5s;
   margin: 0px 30px 0px 30px;
 
-  border-right-width: 3px;
+  border-right-width: 2px;
   border-right-color: @cyan;
   border-right-style: solid;
 
-  border-left-width: 3px;
+  border-left-width: 2px;
   border-left-color: @cyan;
   border-left-style: solid;
 
-  border-bottom-width: 3px;
+  border-bottom-width: 2px;
   border-bottom-color: @cyan;
   border-bottom-style: solid;
 }

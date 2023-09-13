@@ -7,6 +7,6 @@
     "vsCodeExtraColors" : "",
     "nvimTheme": "solarized_dark",
     "obsidianTheme": "Solarized",
-    "font": "SF Mono",
+    "font": "Iosevka Fixed",
     "darkReaderColors": {"background": "#002b36", "text": "#93a1a1"}
 }

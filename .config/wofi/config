@@ -6,3 +6,4 @@ insensitive=true
 location=center
 no_actions=true
 prompt=Search
+monitor=eDP-1

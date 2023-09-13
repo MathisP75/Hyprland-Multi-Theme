@@ -12,4 +12,4 @@ sed -i -E 's/(gtk-theme-name=)(.*)/\1'$1'/g' ~/.config/gtk-3.0/settings.ini
 
 # gtk 4.0
 rm -r ~/.config/gtk-4.0/*
-cp -r /usr/share/themes/$1/gtk-4.0/* ~/.config/gtk-4.0/ || cp -r ~/.themes/$1/gtk-4.0/* ~/.config/gtk-4.0/
+cp -r /usr/share/themes/$1/gtk-4.0/* ~/.config/gtk-4.0/ || cp -r ~/.themes/$1/gtk-4.0/* ~/.config/gtk-4.0/ || cp -r ~/.config/themes/gtk/$1/gtk-4.0/* ~/.config/gtk-4.0/

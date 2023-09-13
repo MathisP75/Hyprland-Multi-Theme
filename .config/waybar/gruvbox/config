@@ -6,7 +6,7 @@
   "height": 60, 
   "layer": "top",
   "position": "top",
-  "output": "DP-2",
+  "output": "eDP-1",
   "spacing": 0,
   "modules-left": ["custom/launcher", "clock#icon", "clock#time","clock#dateicon", "clock#date"],
   "modules-center": ["wlr/workspaces"],

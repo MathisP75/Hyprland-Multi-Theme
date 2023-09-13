@@ -14,9 +14,20 @@ VS_CODE_EXTRA_COLORS=$(cat ~/.config/hypr/themes/$1/$1.json | jq -r ".vsCodeExtr
 DARK_READER_BACKGROUND_COLOR=$(cat ~/.config/hypr/themes/$1/$1.json | jq -r ".darkReaderColors.background")
 DARK_READER_TEXT_COLOR=$(cat ~/.config/hypr/themes/$1/$1.json | jq -r ".darkReaderColors.text")
 
+# wallpaper
+killall hyprpaper
+hyprpaper -c ~/.config/hypr/hyprpaper/$COLOR_SCHEME.conf &
+
 # Change Waybar output depending on monitor
 source ~/.config/hypr/scripts/detect-outputs.sh
 sed -i -E 's/("output": ")(.*)(",)/\1'"$MAIN_DISPLAY"'\3/g' ~/.config/waybar/$COLOR_SCHEME/config
+
+# Change Wofi main display
+sed -i -E 's/(monitor=)(.*)()/\1'"$MAIN_DISPLAY"'\3/g' ~/.config/wofi/config
+
+# waybar
+killall waybar
+waybar --config ~/.config/waybar/$COLOR_SCHEME/config --style ~/.config/waybar/$COLOR_SCHEME/style.css &
 
 # gtk theme
 sh ~/.config/hypr/scripts/set-gtk-theme.sh $GTK_THEME
@@ -25,8 +36,10 @@ sh ~/.config/hypr/scripts/set-gtk-theme.sh $GTK_THEME
 if [[ ! "$KVANTUM_THEME" ]] # If no kvantum theme is set, use gtk2 QT style
 then 
     sed -i -E 's/(style=)(.*)/\1'"gtk2"'/g' ~/.config/qt5ct/qt5ct.conf
+    sed -i -E 's/(style=)(.*)/\1'"gtk2"'/g' ~/.config/qt6ct/qt6ct.conf
 else
     sed -i -E 's/(style=)(.*)/\1'"kvantum"'/g' ~/.config/qt5ct/qt5ct.conf
+    sed -i -E 's/(style=)(.*)/\1'"kvantum"'/g' ~/.config/qt6ct/qt6ct.conf
     kvantummanager --set $KVANTUM_THEME
 fi
 
@@ -35,17 +48,13 @@ gsettings set org.gnome.desktop.interface font-name "$FONT"
 sed -i -E 's/(fixed=")(.*)(,.*,.*,.*,.*,.*,.*,.*,.*,.*,.*)/\1'"$FONT"'\3/g' ~/.config/qt5ct/qt5ct.conf
 sed -i -E 's/(general=")(.*)(,.*,.*,.*,.*,.*,.*,.*,.*,.*,.*)/\1'"$FONT"'\3/g' ~/.config/qt5ct/qt5ct.conf
 
+sed -i -E 's/(fixed=")(.*)(,.*,.*,.*,.*,.*,.*,.*,.*,.*,.*)/\1'"$FONT"'\3/g' ~/.config/qt6ct/qt6ct.conf
+sed -i -E 's/(general=")(.*)(,.*,.*,.*,.*,.*,.*,.*,.*,.*,.*)/\1'"$FONT"'\3/g' ~/.config/qt6ct/qt6ct.conf
+
 # icon theme
 gsettings set org.gnome.desktop.interface icon-theme $ICON_THEME
 sed -i -E 's/(icon_theme=)(.*)/\1'"$ICON_THEME"'/g' ~/.config/qt5ct/qt5ct.conf
-
-# waybar
-killall waybar
-waybar --config ~/.config/waybar/$COLOR_SCHEME/config --style .config/waybar/$COLOR_SCHEME/style.css &
-
-# wallpaper
-killall hyprpaper
-hyprpaper -c ~/.config/hypr/hyprpaper/$COLOR_SCHEME.conf &
+sed -i -E 's/(icon_theme=)(.*)/\1'"$ICON_THEME"'/g' ~/.config/qt6ct/qt6ct.conf
 
 # kitty
 sed -i '1d' ~/.config/kitty/kitty.conf
